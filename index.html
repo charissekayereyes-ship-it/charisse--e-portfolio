@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charisse kaye G. Reyes Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #5b2c6f;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Particle background */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(91, 44, 111, 0.9);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      margin: 0 20px;
+      font-weight: 600;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f3c6ff;
+    }
+
+    header {
+      text-align: center;
+      padding: 150px 20px 100px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    header.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    header h1:hover {
+      transform: scale(1.1);
+      text-shadow: 4px 4px 20px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #f3c6ff;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    #skills, #projects {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skill-card, .project-card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    #projects .project-card {
+      width: 250px;
+      padding: 30px;
+    }
+
+    #contact a {
+      display: inline-block;
+      margin: 10px 20px;
+      padding: 10px 20px;
+      background: #f3c6ff;
+      color: #5b2c6f;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    #contact a:hover {
+      transform: scale(1.1);
+      background: #fff;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(91, 44, 111, 0.9);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="animate">
+    <h1>Charisse kaye G. Reyes</h1>
+    <p>Aspiring Web Developer & Designer | Creating aesthetic digital experiences</p>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Hello! I'm Charisse, a passionate 18 years old student of  Computer Science at SKSU dreaming to be web developer and designer with a love for creating aesthetic, interactive, and functional digital experiences. I enjoy learning new technologies and turning ideas into real-world projects.  
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skill-card">HTML & CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">Python</div>
+    <div class="skill-card">UI/UX Design</div>
+    <div class="skill-card">Adobe Photoshop & Illustrator</div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Responsive portfolio website with interactive UI and smooth animations.</p>
+    </div>
+    <div class="project-card">
+      <h3>Task Manager App</h3>
+      <p>Web-based task manager with user authentication and database integration.</p>
+    </div>
+    <div class="project-card">
+      <h3>Design Mockups</h3>
+      <p>Created UI/UX design mockups for websites and mobile applications.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <a href="mailto:charissekayereyes@gmail.com">Email Me</a>
+    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+  </section>
+
+  <footer>
+    &copy; Charisse kaye G. Reyes. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Fade-in sections on scroll
+    const sections = document.querySelectorAll('section, header');
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Particle animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+    class Particle {
+      constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+      }
+      update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw(){
+        ctx.fillStyle = 'rgba(243,198,255,0.😎';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles(){
+      for(let i=0; i<100; i++){
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Shadow movement on mouse
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 30;
+      document.body.style.background = radial-gradient(circle at ${50+x}% ${50+y}%, #9b59b6, #5b2c6f);
+    });
+  </script>
+
+</body>
+</html>
